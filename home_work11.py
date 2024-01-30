@@ -39,24 +39,6 @@ class Stock:
         self.__products.sort(key=lambda product: product._Product__price)
 
 
-product1 = Product('наушники', 'электронника', 456)
-product2 = Product('кофта', 'одежда', 20)
-product3 = Product('крем', 'косметика', 50)
-
-stock1 = Stock()
-stock1.add_products(product1)
-stock1.add_products(product2)
-
-stock2 = Stock()
-stock2.add_products(product2)
-stock2.add_products(product3)
-
-stock1.sort_price()
-stock2.sort_shop()
-print(stock1.index(1))
-print(stock2.name('крем'))
-
-
 #  Task 2
 
 class BeeElephant:
@@ -88,16 +70,6 @@ class BeeElephant:
             self.__bee = max(0, self.__bee - value)
         else:
             raise ValueError('введите "nectar" или "grass"')
-
-
-bee_elephant = BeeElephant(34, 56)
-
-print(bee_elephant.fly())
-print(bee_elephant.trumpet())
-
-bee_elephant.eat('nectar', 45)
-print(bee_elephant.get_bee())
-print(bee_elephant.get_elephant())
 
 
 #  Task 3
@@ -155,6 +127,43 @@ class Bus:
     def __isub__(self, passenger_name):
         self.stop(passenger_name)
         return self
+
+
+# Calls
+
+#  Task 1
+
+
+product1 = Product('наушники', 'электронника', 456)
+product2 = Product('кофта', 'одежда', 20)
+product3 = Product('крем', 'косметика', 50)
+
+stock1 = Stock()
+stock1.add_products(product1)
+stock1.add_products(product2)
+
+stock2 = Stock()
+stock2.add_products(product2)
+stock2.add_products(product3)
+
+stock1.sort_price()
+stock2.sort_shop()
+print(stock1.index(1))
+print(stock2.name('крем'))
+
+#  Task 2
+
+
+bee_elephant = BeeElephant(34, 56)
+
+print(bee_elephant.fly())
+print(bee_elephant.trumpet())
+
+bee_elephant.eat('nectar', 45)
+print(bee_elephant.get_bee())
+print(bee_elephant.get_elephant())
+
+#  Task 3
 
 
 bus = Bus(max_speed=80, max_seats=10)
